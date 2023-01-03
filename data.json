@@ -1,0 +1,124 @@
+{
+    "title": "Stable and resilient families",
+    "description": "Provide comprehensive services to the family and its individuals and manage their cases in collaboration with strategic partners.",
+    "tags": [
+        "Protection",
+        "Respect",
+        "Justice",
+        "Collaboration"
+    ],
+    "priorities": [
+        {
+            "code": "P1",
+            "title": "Advanced and unified case management",
+            "description": "Advanced and unified case management",
+            "objectives": [
+                {
+                    "code": "OBJ1",
+                    "title": "Deploy ICM",
+                    "description": "The KPI measures the percentage completion of Integrated Case Management set-up",
+                    "kpi": [
+                        {
+                            "code": "KPI01",
+                            "title": "Deploy ICM",
+                            "description": "The KPI measures the percentage completion of Integrated Case Management set-up",
+                            "expected": 99,
+                            "actual": 60
+                        }
+                    ],
+                    "ini": [
+                        {
+                            "code": "INI01",
+                            "title": "Deploy ICM",
+                            "description": "The KPI measures the percentage completion of Integrated Case Management set-up",
+                            "expected": 99,
+                            "actual": 55
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "code": "P2",
+            "title": "Proactive beneficiary centric services",
+            "description": "Advanced and unified case management",
+            "objectives": [
+                {
+                    "code": "OBJ1",
+                    "title": "Deploy ICM",
+                    "description": "The KPI measures the percentage completion of Integrated Case Management set-up",
+                    "kpi": [
+                        {
+                            "code": "KPI01",
+                            "title": "Deploy ICM",
+                            "description": "The KPI measures the percentage completion of Integrated Case Management set-up",
+                            "expected": 99,
+                            "actual": 60
+                        }
+                    ],
+                    "ini": [
+                        {
+                            "code": "INI01",
+                            "title": "Deploy ICM",
+                            "description": "The KPI measures the percentage completion of Integrated Case Management set-up",
+                            "expected": 99,
+                            "actual": 55
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "code": "P3",
+            "title": "Evolved and preventive family care",
+            "description": "Advanced and unified case management",
+            "objectives": [
+                {
+                    "code": "OBJ1",
+                    "title": "Deploy ICM",
+                    "description": "The KPI measures the percentage completion of Integrated Case Management set-up",
+                    "kpi": [
+                        {
+                            "code": "KPI01",
+                            "title": "Deploy ICM",
+                            "description": "The KPI measures the percentage completion of Integrated Case Management set-up",
+                            "expected": 99,
+                            "actual": 60
+                        }
+                    ],
+                    "ini": [
+                        {
+                            "code": "INI01",
+                            "title": "Deploy ICM",
+                            "description": "The KPI measures the percentage completion of Integrated Case Management set-up",
+                            "expected": 99,
+                            "actual": 55
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "enabler": [
+        {
+            "code": "E1",
+            "title": "Institutional maturity"
+        },
+        {
+            "code": "E2",
+            "title": "Strategic human capital development"
+        },
+        {
+            "code": "E3",
+            "title": "Financial & procurement management"
+        },
+        {
+            "code": "E4",
+            "title": "Data enablement"
+        },
+        {
+            "code": "E5",
+            "title": "Digital maturity"
+        }
+    ]
+}

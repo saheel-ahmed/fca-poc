@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap');
+
+* {
+    font-family: 'Yantramanav', sans-serif;
+}
+
+@bg{
+    
+}
+
+:root {
+    --blue: #1e90ff;
+    --bg: #eeeeee;
+    --bg1: #cfcdcd;
+    --color1: #91bab8;
+    --color2: #72be72;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+.demo {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.404);
+    color: #fff;
+    padding: 1px;
+}
+
+.wrapper {
+    min-height: 100vh;
+}
+
+.side-menu {
+    background-color: #fff;
+    width: 64px;
+    padding: 6px;
+    display: inline-block;
+}
+
+.menu-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    min-height: 100vh;
+    max-height: 100vh;
+    max-width: calc( 64px - 12px );
+    position: fixed;
+}
+
+.main-menu {
+    height: 70%;
+}
+
+.logo a img {
+    max-width: 100%;
+    transition: all 0.4s;
+}
+
+.logo a:hover img {
+    transform: scale(1.2);
+}
+
+
+.main-menu a,
+.footer-menu a {
+    display: block;
+    text-align: center;
+    margin: 8px 2px;
+}
+
+.main-menu a,
+.footer-menu a {
+    margin: 12px 2px;
+    padding: 10px;
+    color: var(--bs-secondary);
+    border-radius: 4px;
+}
+
+.main-menu a i,
+.footer-menu a i {
+    font-size: 32px;
+    opacity: 0.8;
+    transition: all 0.4s;
+}
+
+
+
+.main-menu a:hover i,
+.footer-menu a:hover i {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.main-menu a:hover,
+.main-menu a.active {
+    background-color: #eeeeee;
+    color: rgb(44, 44, 44);
+}
+
+.footer-menu .avatar {
+    border-radius: 50%;
+    border: 2px solid rgb(170, 170, 170);
+    padding: 0px;
+}
+
+.footer-menu .avatar img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+
+main {
+    width: calc(100% - 60px);
+    position: relative;
+}
+
+header {
+    width: 100%;
+    background-image: linear-gradient(to right, #fff, rgb(224, 223, 223));
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .quick-menu a {
+    font-size: 1.5rem;
+    color: #606060;
+    margin: 4px;
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: all 0.4s;
+}
+
+header .quick-menu a:hover {
+    background-color: #fff;
+}
+
+.up-arrow{
+  
+}
+
+.accordion-header {
+    display: flex;
+    justify-content:space-around;
+    align-items: stretch;
+    justify-items: center;
+    background-color: #d1dadb5c;
+    height: 64px;
+}
+.accordion-header div{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    padding: 2px 10px;
+}
+
+.accordion-header .tag { 
+    width: 10%;
+}
+
+.accordion-header div.action {
+    width: 100px;
+    justify-content: end;
+}
+
+.accordion-header div.title{
+    width: calc( 100% - 10% - 128px - 60px );
+}
+
+.accordion-header .tag {
+    font-weight: bolder;
+}
+
+.accordion-header div.tag h1 {
+    width: 100%;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.accordion-header div.handle
+{
+    width: 60px;
+    justify-content: end;
+    align-items: center;
+    justify-items: center;
+}
+
+.accordion-header div.handle .accordion-button {
+    background-color: #fff;
+    margin: 0px;
+    width: 38px;
+    height: 38px;
+    max-width: 38px;
+    border-radius: 50% !important;
+    padding: 6px;
+}
+
+.accordion-header div.handle .accordion-button::after{
+    margin-left: 3px;
+}
+
+
+.priority {
+    display: flex;
+    width: 100%;
+    height: 64px;
+    align-items: center;
+    background-color: #f8f8f8;
+}
+
+.priority div {
+    padding: 4px 8px;
+}
+
+.priority .tag {
+    background-color: #ececec;
+    font-weight: bolder;
+    width: 64px !important;
+    height: 64px;
+    align-items: center;
+    text-align: center;
+}
+
+
+.priority .tag h4
+{
+    width: 100%;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.priority .title {
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    width: 80%;
+}
+
+
+.kpi-item {
+    display: flex;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    background-color: #f8f8f8;
+    border-left: 2px solid rgb(194, 194, 194);
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.kpi-item:hover{
+    background-color: #ebebeb;
+}
+
+.kpi-item:first-child {
+    margin-top: 10px;
+} 
+
+.kpi-item .title {
+    width: calc(100% - 64px - 6px);
+    padding: 0px 10px;
+}
+
+.kpi-item .title h6 {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.kpi-item .result {
+    width: 64px;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    background-color: var(--color1);
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+}
+
+.kpi-item .result.expected
+{
+    background-color: var(--color2);
+}
+
+.kpi-item .result span {
+    display: block;
+    padding: 20px;
+}
+
+.kpi-item .action {
+    width: 20%;
+    display: flex;
+    height: 100%;
+    justify-content: end;
+}
+
+.kpi-item .action .btn {
+    height: 100%;
+    border-radius: 0px;
+    width: 40px;
+}
+
+.kpi-item input {
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 22px;
+    padding: 0;
+}
+
+.kpi-item .result::before {
+    content: attr(data-headline);
+    position: absolute;
+    font-size: 10px;
+    top: 0;
+}
+
+.kpi-item .result::after {
+    content: attr(data-baseline);
+    position: absolute;
+    font-size: 10px;
+    bottom: 0;
+}
+
+.kpi-item .title button {
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.modal-fullscreen {
+    width: calc( 100vw - 64px);
+    margin-left: 64px;
+}
+
+.bg {
+    background-color: var(--bg);
+}
+
+.bg1 {
+    background-color: var(--bg1);
+}
+
+.progress {
+    display: flex;
+    height: 64px;
+    background-color: var(--bg);
+    margin: 20px 0px;
+    border: 0px;
+    border-radius: 0px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    padding: 0px;
+}
+.progress div {
+    height: 64px;
+    position: relative;
+    transition: all 0.4s;
+}
+.progress div::after {
+    content: attr(data-value);
+    font-size: 2rem;
+    margin-top: 8px;
+    position: absolute;
+    right: 10px;
+    transition: all 0.4s;
+}
+
+.progress div:first-child {
+    background-color: var(--color1);
+    transition: all 0.4s;
+}
+
+.progress div:last-child {
+    background-color:  var(--color2);
+    transition: all 0.4s;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+
+

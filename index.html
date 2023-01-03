@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCA | Dashboard</title>
+
+    <link rel="stylesheet" href="/assets/css/line-awesome.min.css" />
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+
+<body>
+    <div class="demo">
+        <marquee>This is demo data, it will be refreshed automatically if you reload or leave this page.</marquee>
+    </div>
+    <div id="app" class="d-flex wrapper">
+        <!-- Side Menu -->
+        <div class="side-menu shadow">
+            <div class="menu-container">
+                <!-- Header menu -->
+                <div class="logo">
+                    <a href="/" title="EOV">
+                        <img src="/assets/img/logo.png" class="img-fluid" />
+                    </a>
+                </div>
+                <div class="main-menu">
+                    <a href="#" title="Dashboard"><i class="las la-tachometer-alt"></i></a>
+                    <a href="#" title="Organization"><i class="las la-university"></i></a>
+                    <a href="#" class="active" title="Objectives"><i class="las la-server"></i></a>
+                    <a href="#" title="Reports"><i class="las la-chart-pie"></i></a>
+                </div>
+                <!-- Footer menu -->
+                <div class="footer-menu">
+                    <a href="#" title="Settings"><i class="las la-cog"></i></a>
+                    <a href="#" class="avatar shadow">
+                        <img src="/assets/img/avatar.png" />
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Placeholder for work area -->
+        <main>
+
+            <!-- Header headlines -->
+            <header>
+                <div class="heading">
+                    <h2 class="p-0 m-0">Organization Objectives</h2>
+                    <span class="text-muted p-0 m-0">Objective in details</span>
+                </div>
+                <div class="quick-menu">
+                    <a href="#"><i class="las la-bell"></i></a>
+                    <a href="#"><i class="las la-ellipsis-v"></i></a>
+                </div>
+            </header>
+
+
+            <section class="container-fluid">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="top-heading">
+                            <div class="triangle mt-2"></div>
+                            <h3 class="text-center pt-5">{{db.title}}</h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <h6 class="text-center rounded-0 text-secondary w-full my-2 py-2 bg">
+                            {{db.description}}
+                        </h6>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-3" v-for="tag in db.tags">
+                        <div class="d-grid">
+                            <button class="text-center text-uppercase btn btn-lg btn-light border-0 rounded-0">{{tag}}</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="py-4 px-2">
+                    
+                    <div class="row row-cols-3">
+
+                        <div class="col mb-4" v-for="(priority, pIndex) in db.priorities"
+                            :key="pIndex">
+
+                            <div class="priority">
+                                <button type="button" class="tag btn btn-light rounded-0">
+                                    {{priority.code}}
+                                </button>
+                                <div class="title">
+                                    <h6 class="m-0 p-0 fw-normal">
+                                        <span>{{priority.title}}</span>
+                                    </h6>
+                                </div>
+                                <div class="action gap-1">
+                                    <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle"
+                                        ><i class="las la-marker"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- KPIs + Intatives > Now this is objectives -->
+                            <div>
+
+                                <div class="kpi-item" v-for="(obj, dIndex) in priority.objectives"
+                                    @click="fnViewObjective(pIndex, dIndex)" :key="dIndex">
+                                    <div class="title">
+                                        <h6 class="m-0 p-0 fw-normal"><span class="fw-bolder">{{obj.code}} -</span> {{obj.title}}</h6>
+                                    </div>
+                                    <div class="result">
+                                        <span>{{checkPercentage(obj)}}</span>
+                                    </div>
+                                </div>
+
+                                <div class="d-grid">
+                                    <button type="button" class="btn btn-outline-secondary rounded-0"
+                                        @click="fnAddObjective(pIndex)">
+                                        <i class="las la-plus"></i> Add Objective
+                                    </button>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                        
+                    </div>
+                    
+                </div>
+               
+                <div class="py-4 px-2">
+
+                    <div class="accordion-header mb-2" v-for="enable in db.enabler">
+                        <button type="button" class="tag btn btn-secondary rounded-0">
+                            <h1>{{enable.code}}</h1>
+                        </button>
+                        <div class="title">
+                            <h5 class="m-0 p-0 fw-normal text-truncate">{{enable.title}}</h5>
+                        </div>
+                        <div class="action gap-1">
+                            <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle"
+                                ><i class="las la-marker"></i></button>
+                            <button type="button" class="btn btn-outline-danger btn-sm rounded-circle"
+                                ><i class="lar la-trash-alt"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+           
+            <!-- Priority Modal Popup -->
+            <div class="modal fade" id="priorityPopup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+                <div class="modal-dialog modal-fullscreen">
+                    <div class="modal-content" v-if="objectiveMode === 'view'">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Objective</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="container">
+                               
+                                <div class="row">
+
+                                    <div class="col-12">
+                                        <div class="text-end">
+                                            <div class="d-flex justify-content-end gap-2 mb-4">
+                                                <button class="btn btn-outline-secondary rounded-0"><i
+                                                        class="las la-pen"></i> Edit</button>
+                                                <button class="btn btn-outline-danger rounded-0"><i
+                                                        class="las la-trash"></i> Delete</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col mb-4">
+
+                                        <div class="priority">
+                                            <div class="tag d-flex align-items-center justify-content-center">
+                                                <h6 class="p-0 m-0 fw-bolder">{{objective.code}}</h6>
+                                            </div>
+                                            <div class="title">
+                                                <h6 class="m-0 p-0 fw-normal text-truncate">
+                                                    <span></span>
+                                                    <span
+                                                        class="text-uppercase">{{objective.title}}</span>
+                                                </h6>
+                                            </div>
+                                        </div>
+
+                                        <p class="text-muted py-2">
+                                          {{objective.description}} 
+                                        </p>
+
+                                        <div class="progress">
+                                            <div v-bind:style="{ width: objective.result1+'%' }" v-bind:data-value="objective.result1+'%'"></div>
+                                            <div v-bind:style="{ width: objective.result2+'%' }" v-bind:data-value="objective.result2+'%'"></div>
+                                        </div>
+
+                                        <!-- KPIs + Intatives -->
+                                        <div class="row">
+
+                                            <div class="col-md-6">
+
+                                                <div class="card border-0 mt-2 rounded-0">
+                                                    <div class="card-header">
+                                                        <div class="card-title p-0 m-0">
+                                                            <div
+                                                                class="d-flex justify-content-between align-items-center gap-2">
+                                                                <h6 class="text-uppercase p-0 my-2">
+                                                                    Strategic KPIs
+                                                                </h6>
+                                                                <div>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-secondary rounded-0"
+                                                                        @click="fnAddKPI('KPI')">
+                                                                        <i class="las la-plus"></i> Add KPIs
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="kpi-item" v-for="(dt, kIndex) in objective.kpi" :key="kIndex">
+                                                            <div class="title">
+                                                                <h6 class="m-0 p-0 fw-normal">
+                                                                    <button type="button" class="btn btn-outline-danger border-0 rounded-circle" @click="fnRemoveKPI(kIndex,  objective.kpi)"><i class="las la-times-circle"></i></button>
+                                                                    <span class="fw-bolder">{{dt.code}} -</span> {{dt.title}}
+                                                                </h6>
+                                                            </div>
+                                                            <div class="result expected" data-headline="expected" data-baseline="%">
+                                                                <span>{{dt.expected}}</span>
+                                                            </div>
+                                                            <div class="result" data-headline="actual" data-baseline="%">
+                                                                <input v-model="dt.actual" class="form-control border-0 rounded-0 text-center" @keyup="fnCalc()" onkeypress="return /[0-9]/i.test(event.key)" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="col-md-6">
+
+                                                <div class="card border-0 mt-2 rounded-0">
+                                                    <div class="card-header">
+                                                        <div class="card-title p-0 m-0">
+                                                            <div
+                                                                class="d-flex justify-content-between align-items-center gap-2">
+                                                                <h6 class="text-uppercase p-0 my-2">
+                                                                    Strategic initiatives
+                                                                </h6>
+                                                                <div>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-secondary rounded-0"
+                                                                        @click="fnAddKPI('INIT')">
+                                                                        <i class="las la-plus"></i> Add initiatives
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="kpi-item" v-for="(dt, kIndex) in objective.ini" :key="kIndex">
+                                                            <div class="title">
+                                                                <button type="button" class="btn btn-outline-danger border-0 rounded-circle" @click="fnRemoveKPI(kIndex,  objective.ini)"><i class="las la-times-circle"></i></button>
+                                                                <h6 class="m-0 p-0 fw-normal"><span class="fw-bolder">{{dt.code}} -</span> {{dt.title}}</h6>
+                                                            </div>
+                                                            <div class="result expected" data-headline="expected" data-baseline="%">
+                                                                <span>{{dt.expected}}</span>
+                                                            </div>
+                                                            <div class="result" data-headline="actual" data-baseline="%">
+                                                                <input v-model="dt.actual" class="form-control border-0 rounded-0 text-center" maxlength="3" @keyup="fnCalc()" onkeypress="return /[0-9]/i.test(event.key)" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Modal Popup -->
+            <div class="modal fade" id="objPopup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content rounded-0">
+                        <form method="post" @submit.prevent="fnSaveObjective()">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Objective</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="container">
+                                    <div class="mb-2">
+                                        <label>Title</label>
+                                        <input class="form-control rounded-1" type="text" name="code"
+                                            v-model="objective.title" placeholder="Objective title" maxlength="50" required />
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <label>Description</label>
+                                        <textarea class="form-control rounded-1" type="text" name="code"
+                                            v-model="objective.description" placeholder="Objective description" maxlength="50" required></textarea>
+                                    </div>
+                                    
+
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-outline-primary rounded-0">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+
+
+    </div>
+
+    <script src="/assets/js/jquery-3.6.3.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/jquery.toaster.js"></script>
+    <script src="/assets/js/script.js"></script>
+
+
+</body>
+
+</html>
