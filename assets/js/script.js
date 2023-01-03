@@ -27,7 +27,7 @@ const { createApp } = Vue
     methods: {
         fetchData : function () {
             let _self = this;
-            $.getJSON('/data.json', function (response) {
+            $.getJSON('./data.json', function (response) {
                 _self.db = response;
             });
         },
