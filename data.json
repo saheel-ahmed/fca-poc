@@ -14,25 +14,100 @@
             "description": "Advanced and unified case management",
             "objectives": [
                 {
-                    "code": "OBJ1",
+                    "code": "P1SO1",
                     "title": "Deploy ICM",
                     "description": "The KPI measures the percentage completion of Integrated Case Management set-up",
                     "kpi": [
                         {
-                            "code": "KPI01",
-                            "title": "Deploy ICM",
+                            "code": "P1SO1K1",
+                            "title": "Integrated case management setup",
                             "description": "The KPI measures the percentage completion of Integrated Case Management set-up",
                             "expected": 99,
-                            "actual": 60
+                            "actual": 60,
+                            "bgColor": "#dcda9d"
+                        },
+                        {
+                            "code": "P1SO1K2",
+                            "title": "Integrated case management roll-out as planned",
+                            "description": "The KPI measures the percentage completion of rolled out phases of integrated case management model as planned",
+                            "expected": 99,
+                            "actual": 60,
+                            "bgColor": "#dcda9d"
+                        },
+                        {
+                            "code": "P1SO1K3",
+                            "title": "Coverage percentage of cases through ICM",
+                            "description": "Measures the percentage of cases managed through the ICM against the targeted family care cases",
+                            "expected": 99,
+                            "actual": 60,
+                            "bgColor": "#f2f2f2"
                         }
                     ],
                     "ini": [
                         {
-                            "code": "INI01",
-                            "title": "Deploy ICM",
-                            "description": "The KPI measures the percentage completion of Integrated Case Management set-up",
+                            "code": "P1SO1I1",
+                            "title": "Initiatives",
+                            "description": "Roll out and activate the Integrated case management system",
                             "expected": 99,
-                            "actual": 55
+                            "actual": 55,
+                            "bgColor": "#f2f2f2"
+                        },
+                        {
+                            "code": "P1SO1I2",
+                            "title": "Initiatives",
+                            "description": "Enhance and activate TOM for ICM and communicate engagement model to relevant stakeholders",
+                            "expected": 99,
+                            "actual": 55,
+                            "bgColor": "#f2f2f2"
+                        }
+                    ]
+                },
+                {
+                    "code": "P1SO2",
+                    "title": "Create value from data analytics",
+                    "description": "The KPI measures the percentage completion of Integrated Case Management set-up",
+                    "kpi": [
+                        {
+                            "code": "P1SO2K1",
+                            "title": "Adherence to supply / demand plan",
+                            "description": "Measures the percentage completion of the supply / demand as per the defined timeline",
+                            "expected": 99,
+                            "actual": 60,
+                            "bgColor": "#f2f2f2"
+                        },
+                        {
+                            "code": "P1SO2K2",
+                            "title": "Accuracy of supply / demand forecast",
+                            "description": "Measures the accuracy of the demand / supply forecast through calculating the actual number of cases vs. the planned / forecasted number of cases",
+                            "expected": 99,
+                            "actual": 60,
+                            "bgColor": "#f2f2f2"
+                        },
+                        {
+                            "code": "P1SO2K3",
+                            "title": "No. of implemented ICM improvement recommendations",
+                            "description": "Measures the number of improvement recommendations implemented based on analysis of ICM data",
+                            "expected": 99,
+                            "actual": 60,
+                            "bgColor": "#f2f2f2"
+                        }
+                    ],
+                    "ini": [
+                        {
+                            "code": "P1SO2I1",
+                            "title": "Initiatives",
+                            "description": "Forecast demand and plan supply to ensure effective resource allocation and service provision ",
+                            "expected": 99,
+                            "actual": 55,
+                            "bgColor": "#f2f2f2"
+                        },
+                        {
+                            "code": "P1SO2I2",
+                            "title": "Initiatives",
+                            "description": "Identify, capture and derive insights from ICM data to develop recommendations for continuous improvement and decision making",
+                            "expected": 99,
+                            "actual": 55,
+                            "bgColor": "#f2f2f2"
                         }
                     ]
                 }
@@ -44,25 +119,124 @@
             "description": "Advanced and unified case management",
             "objectives": [
                 {
-                    "code": "OBJ1",
-                    "title": "Deploy ICM",
+                    "code": "P2SO1",
+                    "title": "Develop and sustain beneficiary centric service catalogue",
                     "description": "The KPI measures the percentage completion of Integrated Case Management set-up",
                     "kpi": [
                         {
-                            "code": "KPI01",
-                            "title": "Deploy ICM",
-                            "description": "The KPI measures the percentage completion of Integrated Case Management set-up",
+                            "code": "P2SO1K1",
+                            "title": "Adherence to service activation roadmap",
+                            "description": "Measures the percentage completion of the services roll-out as per the defined plan",
                             "expected": 99,
-                            "actual": 60
+                            "actual": 60,
+                            "bgColor": "#f2f2f2"
+                        },
+                        {
+                            "code": "P2SO1K2",
+                            "title": "Percentage of serviced beneficiaries",
+                            "description": "The KPI measures the percentage completion of rolled out phases of integrated case management model as planned",
+                            "expected": 99,
+                            "actual": 60,
+                            "bgColor": "#dcda9d"
+                        },
+                        {
+                            "code": "P2SO1K3",
+                            "title": "Coverage of the service catalogue",
+                            "description": "Measures the percentage of cases handled by type that are part of the service catalogue",
+                            "expected": 99,
+                            "actual": 60,
+                            "bgColor": "#f2f2f2"
+                        },
+                        {
+                            "code": "P2SO1K4",
+                            "title": "Percentage of cases handled outside service catalogue",
+                            "description": "Measures the percentage of cases handled by type that are not currently covered by the service catalogue",
+                            "expected": 99,
+                            "actual": 60,
+                            "bgColor": "#f2f2f2"
                         }
                     ],
                     "ini": [
                         {
-                            "code": "INI01",
-                            "title": "Deploy ICM",
-                            "description": "The KPI measures the percentage completion of Integrated Case Management set-up",
+                            "code": "P2SO1I1",
+                            "title": "Initiatives",
+                            "description": "Enhance and detail FCA’s service catalogue1",
                             "expected": 99,
-                            "actual": 55
+                            "actual": 55,
+                            "bgColor": "#f2f2f2"
+                        },
+                        {
+                            "code": "P2SO1I2",
+                            "title": "Initiatives",
+                            "description": "Develop and deploy a service activation roadmap including impact measurement",
+                            "expected": 99,
+                            "actual": 55,
+                            "bgColor": "#f2f2f2"
+                        }
+                    ]
+                },
+                {
+                    "code": "P1SO2",
+                    "title": "Adopt an effective service delivery model",
+                    "description": "The KPI measures the percentage completion of Integrated Case Management set-up",
+                    "kpi": [
+                        {
+                            "code": "P2SO2K1",
+                            "title": "Beneficiary satisfaction",
+                            "description": "Measures beneficiary experience and satisfaction with the quality of services provided",
+                            "expected": 99,
+                            "actual": 60,
+                            "bgColor": "#dae6df"
+                        },
+                        {
+                            "code": "P2SO2K2",
+                            "title": "Percentage of services delivered within targeted time",
+                            "description": "Measures the percentage of services that are delivered within the defined timeframe",
+                            "expected": 99,
+                            "actual": 60,
+                            "bgColor": "#dae6df"
+                        },
+                        {
+                            "code": "P2SO2K3",
+                            "title": "Percentage of services delivered through partnerships",
+                            "description": "Measures the percentage of services that are delivered through partnerships / agreements with public, private and third sector entities",
+                            "expected": 99,
+                            "actual": 60,
+                            "bgColor": "#f2f2f2"
+                        },
+                        {
+                            "code": "P2SO2K4",
+                            "title": "Adherence to activation of omni channels",
+                            "description": "Measures the alignment with the activation plan of omni channels",
+                            "expected": 99,
+                            "actual": 60,
+                            "bgColor": "#f2f2f2"
+                        }
+                    ],
+                    "ini": [
+                        {
+                            "code": "P2SO2I1",
+                            "title": "Initiatives",
+                            "description": "Develop a customized service delivery model per service for an enhanced beneficiary experience",
+                            "expected": 99,
+                            "actual": 55,
+                            "bgColor": "#f2f2f2"
+                        },
+                        {
+                            "code": "P2SO2I2",
+                            "title": "Initiatives",
+                            "description": "Design and activate strategic partnership framework and plan that include monitoring value for continuous improvement",
+                            "expected": 99,
+                            "actual": 55,
+                            "bgColor": "#f2f2f2"
+                        },
+                        {
+                            "code": "P2SO2I3",
+                            "title": "Initiatives",
+                            "description": "Launch Omni Channels",
+                            "expected": 99,
+                            "actual": 55,
+                            "bgColor": "#dcda9d"
                         }
                     ]
                 }
@@ -74,51 +248,724 @@
             "description": "Advanced and unified case management",
             "objectives": [
                 {
-                    "code": "OBJ1",
-                    "title": "Deploy ICM",
+                    "code": "P3SO1",
+                    "title": "Contribute to growing maturity of family care",
                     "description": "The KPI measures the percentage completion of Integrated Case Management set-up",
                     "kpi": [
                         {
-                            "code": "KPI01",
-                            "title": "Deploy ICM",
-                            "description": "The KPI measures the percentage completion of Integrated Case Management set-up",
+                            "code": "P3SO1K1",
+                            "title": "Number of recommendations submitted (e.g. policy changes)",
+                            "description": "Measures number of evidence-based recommendations submitted by FCA",
                             "expected": 99,
-                            "actual": 60
+                            "actual": 60,
+                            "bgColor": "#f2f2f2"
+                        },
+                        {
+                            "code": "P3SO1K2",
+                            "title": "Adherence to shift in mindset initiatives",
+                            "description": "Measures the percentage adherence to the implementation plan of mindset change initiatives",
+                            "expected": 99,
+                            "actual": 60,
+                            "bgColor": "#f2f2f2"
                         }
                     ],
                     "ini": [
                         {
-                            "code": "INI01",
-                            "title": "Deploy ICM",
-                            "description": "The KPI measures the percentage completion of Integrated Case Management set-up",
+                            "code": "P3SO1I1",
+                            "title": "Initiatives",
+                            "description": "Develop evidence based analyses to recommend changes (e.g. policies) to the regulator",
                             "expected": 99,
-                            "actual": 55
+                            "actual": 55,
+                            "bgColor": "#f2f2f2"
+                        },
+                        {
+                            "code": "P3SO1I2",
+                            "title": "Initiatives",
+                            "description": "Activate a proactive and interactive engagement plan with communities to understand root causes of family challenges",
+                            "expected": 99,
+                            "actual": 55,
+                            "bgColor": "#f2f2f2"
+                        },
+                        {
+                            "code": "P3SO1I3",
+                            "title": "Initiatives",
+                            "description": "Co-design and implement initiatives targeting mindset changes",
+                            "expected": 99,
+                            "actual": 55,
+                            "bgColor": "#f2f2f2"
+                        }
+                    ]
+                },
+                {
+                    "code": "P3SO2",
+                    "title": "Deliver integration and preventive programs",
+                    "description": "The KPI measures the percentage completion of Integrated Case Management set-up",
+                    "kpi": [
+                        {
+                            "code": "P3SO2K1",
+                            "title": "Delivery of preventive programs",
+                            "description": "Weighted average of the percentage delivery of the targeted programs as per the defined plan",
+                            "expected": 99,
+                            "actual": 60,
+                            "bgColor": "#f2f2f2"
+                        },
+                        {
+                            "code": "P3SO2K2",
+                            "title": "Reach of preventive programs",
+                            "description": "Measures the percentage of people reached from the identified target audiences of each program",
+                            "expected": 99,
+                            "actual": 60,
+                            "bgColor": "#f2f2f2"
+                        }
+                    ],
+                    "ini": [
+                        {
+                            "code": "P3SO2I1",
+                            "title": "Initiatives",
+                            "description": "Develop and deliver comprehensive inclusion & empowerment programs",
+                            "expected": 99,
+                            "actual": 55,
+                            "bgColor": "#dcda9d"
+                        },
+                        {
+                            "code": "P3SO2I2",
+                            "title": "Initiatives",
+                            "description": "Establish a holistic model for social re-integration (e.g. halfway houses)",
+                            "expected": 99,
+                            "actual": 55,
+                            "bgColor": "#dcda9d"
+                        },
+                        {
+                            "code": "P3SO2I3",
+                            "title": "Initiatives",
+                            "description": "Launch innovative prevention programs for the youth",
+                            "expected": 99,
+                            "actual": 55,
+                            "bgColor": "#dcda9d"
+                        },
+                        {
+                            "code": "P3SO2I4",
+                            "title": "Initiatives",
+                            "description": "Establish programs targeted towards changing behavior of perpetrators",
+                            "expected": 99,
+                            "actual": 55,
+                            "bgColor": "#dcda9d"
                         }
                     ]
                 }
             ]
         }
     ],
-    "enabler": [
+    "enablers": [
         {
             "code": "E1",
-            "title": "Institutional maturity"
+            "title": "Institutional maturity",
+            "kpi": [
+                {
+                    "code": "E1K1",
+                    "title": "Completion of institutional set-up within targeted time",
+                    "description": "Measures project progress according to set milestones",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dcda9d"
+                },
+                {
+                    "code": "E1K2",
+                    "title": "Percentage of adherence to FCA’s TOM plan",
+                    "description": "Measures the progress of the FCA TOM roll-out against the targeted plan",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#f2f2f2"
+                },
+                {
+                    "code": "E1K3",
+                    "title": "Institutional performance management capabilities activation",
+                    "description": "Measures progress on activation of institutional performance capabilities",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#f2f2f2"
+                },
+                {
+                    "code": "E1K4",
+                    "title": "Institutional performance management capabilities activation",
+                    "description": "Measures the organizational health of an entity according to set dimensions to help identify areas of improvement",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                },
+                {
+                    "code": "E1K5",
+                    "title": "Reach of awareness campaigns",
+                    "description": "Measures the number of people reached2 through the awareness campaigns / programs",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                }
+            ],
+            "ini": [
+                {
+                    "code": "E1I1",
+                    "title": "Initiatives",
+                    "description": "Detail the operating model down to the lowest level and roll it out (including governance model, engagement model, DoAs, etc.)",
+                    "expected": 99,
+                    "actual": 55,
+                    "bgColor": "#f2f2f2"
+                },
+                {
+                    "code": "E1I2",
+                    "title": "Initiatives",
+                    "description": "Establish performance management capabilities1 within FCA",
+                    "expected": 99,
+                    "actual": 55,
+                    "bgColor": "#f2f2f2"
+                },
+                {
+                    "code": "E1I3",
+                    "title": "Initiatives",
+                    "description": "Design and activate campaigns and programs to increase awareness about the role of FCA in the ecosystem",
+                    "expected": 99,
+                    "actual": 55,
+                    "bgColor": "#f2f2f2"
+                },
+                {
+                    "code": "E1I4",
+                    "title": "Initiatives",
+                    "description": "Identify certification and service quality requirements and develop a plan to meet them",
+                    "expected": 99,
+                    "actual": 55,
+                    "bgColor": "#f2f2f2"
+                }
+            ]
         },
         {
             "code": "E2",
-            "title": "Strategic human capital development"
+            "title": "Strategic human capital development",
+            "kpi": [
+                {
+                    "code": "E2K1",
+                    "title": "Core workers strategic capability building",
+                    "description": "Measures the number of capability development and training to the core social workers in FCA",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#f2f2f2"
+                },
+                {
+                    "code": "E2K2",
+                    "title": "Employee training",
+                    "description": "Measures the number of capability development and training to employees as per the approved training plan",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                },
+                {
+                    "code": "E2K3",
+                    "title": "Strategic HC capacity building ratio",
+                    "description": "Measures the number of vacancies against the hiring plan",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#f2f2f2"
+                },
+                {
+                    "code": "E2K4",
+                    "title": "Activation of human capital enablers",
+                    "description": "Measures the activation of HC strategy and enablers against the defined milestones",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#f2f2f2"
+                },
+                {
+                    "code": "E2K5",
+                    "title": "Emiratization",
+                    "description": "Measures the percentage of national employees within the government entity",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                },
+                {
+                    "code": "E2K6",
+                    "title": "Employee turnover rate",
+                    "description": "Measures the number of resignations",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                },
+                {
+                    "code": "E2K7",
+                    "title": "Employees Conducting Work Remotely",
+                    "description": "Measures the percentage of employees that work remotely",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                },
+                {
+                    "code": "E2K8",
+                    "title": "Satisfaction level of employees working remotely",
+                    "description": "Measures the satisfaction of employees working remotely",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                }
+            ],
+            "ini": [
+                {
+                    "code": "E2I1",
+                    "title": "Initiatives",
+                    "description": "Develop a detailed human capital strategy for FCA",
+                    "expected": 99,
+                    "actual": 55,
+                    "bgColor": "#f2f2f2"
+                },
+                {
+                    "code": "E2I2",
+                    "title": "Initiatives",
+                    "description": "Identify strategic human capital requirements and secure sourcing needs",
+                    "expected": 99,
+                    "actual": 55,
+                    "bgColor": "#f2f2f2"
+                },
+                {
+                    "code": "E2I3",
+                    "title": "Initiatives",
+                    "description": "Design and implement capability building programs for employees",
+                    "expected": 99,
+                    "actual": 55,
+                    "bgColor": "#f2f2f2"
+                },
+                {
+                    "code": "E2I4",
+                    "title": "Initiatives",
+                    "description": "Design and fully activate HC enablers (knowledge hub, career path, retention plan, succession plan, etc.) ",
+                    "expected": 99,
+                    "actual": 55,
+                    "bgColor": "#f2f2f2"
+                }
+            ]
         },
         {
             "code": "E3",
-            "title": "Financial & procurement management"
+            "title": "Financial & procurement management",
+            "kpi": [
+                {
+                    "code": "E3K1",
+                    "title": "Compliance with financial law and related decisions",
+                    "description": "Measures compliance with financial law and relevant resolutions",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                },
+                {
+                    "code": "E3K2",
+                    "title": "Financial team capabilities",
+                    "description": "Measures the capabilities of the finance team according to set standards",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                },
+                {
+                    "code": "E3K3",
+                    "title": "Cash management and financial planning",
+                    "description": "Measures the entity’s ability to conduct sound financial planning",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#f2f2f2"
+                },
+                {
+                    "code": "E3K4",
+                    "title": "Control expenditures and achieve financial savings",
+                    "description": "Measures the percentage of the budget spent",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#f2f2f2"
+                },
+                {
+                    "code": "E3K5",
+                    "title": "Financial Obligations towards suppliers",
+                    "description": "Measures the entities commitment in paying financial obligations towards companies and suppliers within 15 working days",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                },
+                {
+                    "code": "E3K6",
+                    "title": "Percentage of Government procurement allocated to mSME’s",
+                    "description": "Measures the percentage of purchases and contracts signed with MSME’s",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                },
+                {
+                    "code": "E3K7",
+                    "title": "Compliance with AD Local Content policy in gov. procurement",
+                    "description": "Measures the entities commitment and compliance to Abu Dhabi Local Content policy in government procurement",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                },
+                {
+                    "code": "E3K8",
+                    "title": "Percentage of Government Wide Agreement Enrollment",
+                    "description": "Measures the percentage of contracts that are part of the government wide agreement enrollment",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                }
+            ],
+            "ini": [
+                {
+                    "code": "E3I1",
+                    "title": "Initiatives",
+                    "description": "Establish financial capabilities to monitor cost of service delivery and case management to drive cost efficiency",
+                    "expected": 99,
+                    "actual": 55,
+                    "bgColor": "#f2f2f2"
+                }
+            ]
         },
         {
             "code": "E4",
-            "title": "Data enablement"
+            "title": "Data enablement",
+            "kpi": [
+                {
+                    "code": "E4K1",
+                    "title": "Data maturity level",
+                    "description": "Measures the maturity level of data management within FCA",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                },
+                {
+                    "code": "E4K2",
+                    "title": "Quality of data accuracy",
+                    "description": "Measures the quality of data across specific criteria (relevance, clarity of  methodology, reliability etc.)",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                },
+                {
+                    "code": "E4K3",
+                    "title": "Timely data",
+                    "description": "Measures the compliance level with the time set for implementation of data standards",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#f2f2f2"
+                },
+                {
+                    "code": "E4K4",
+                    "title": "Compliance with data standards",
+                    "description": "Measures compliance level with data standards",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#f2f2f2"
+                },
+                {
+                    "code": "E4K5",
+                    "title": "Data coverage",
+                    "description": "Measures level of comprehensive data required to meet the needs of users through lists specified and approved by the Statistics Center",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                },
+                {
+                    "code": "E4K6",
+                    "title": "Alignment to data management and governance model",
+                    "description": "Measures the alignment of data management and data governance against the defined milestones ",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                },
+                {
+                    "code": "E4K7",
+                    "title": "Open data sets published on the AD open data platform",
+                    "description": "Measures data sets that entities in AD can make available to the public in a usable way and publish via the AD open data platform",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                }
+            ],
+            "ini": [
+                {
+                    "code": "E4I1",
+                    "title": "Initiatives",
+                    "description": "Identify reporting needs, develop reporting catalogue and derive data requirements",
+                    "expected": 99,
+                    "actual": 55,
+                    "bgColor": "#f2f2f2"
+                },
+                {
+                    "code": "E4I2",
+                    "title": "Initiatives",
+                    "description": "Develop a data management and data governance model",
+                    "expected": 99,
+                    "actual": 55,
+                    "bgColor": "#f2f2f2"
+                }
+            ]
         },
         {
             "code": "E5",
-            "title": "Digital maturity"
+            "title": "Digital maturity",
+            "kpi": [
+                {
+                    "code": "E5K1",
+                    "title": "Adherence to the digital strategy roadmap",
+                    "description": "Measures the progress of the digital strategy against the set milestones ",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#f2f2f2"
+                },
+                {
+                    "code": "E5K2",
+                    "title": "Digital transformation of government services",
+                    "description": "Measures the percentage of government services that have been digitized",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                },
+                {
+                    "code": "E5K3",
+                    "title": "Digital transformation of support functions",
+                    "description": "Measures the percentage digitization of support functions across FCA",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#f2f2f2"
+                },
+                {
+                    "code": "E5K4",
+                    "title": "ADGEs Cyber Security Maturity",
+                    "description": "Measures the maturity level of the cyber security implementation of the cyber security standards",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                },
+                {
+                    "code": "E5K5",
+                    "title": "Resolution Compliance (CRM)1",
+                    "description": "Measures the percentage of resolution compliance of all logged cases in CRM through contact center channels",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                },
+                {
+                    "code": "E5K6",
+                    "title": "Downtime on digital services",
+                    "description": "Measures the downtime of digital services to ensure service continuity for customers",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                },
+                {
+                    "code": "E5K7",
+                    "title": "IT infrastructure readiness",
+                    "description": "Measures the level of infrastructural readiness during uncertain crisis and ability to ensure business continuity",
+                    "expected": 99,
+                    "actual": 60,
+                    "bgColor": "#dae6df"
+                }
+            ],
+            "ini": [
+                {
+                    "code": "E5I1",
+                    "title": "Initiatives",
+                    "description": "Develop a digital strategy for FCA along with a target technology landscape and roadmap",
+                    "expected": 99,
+                    "actual": 55,
+                    "bgColor": "#f2f2f2"
+                },
+                {
+                    "code": "E5I2",
+                    "title": "Initiatives",
+                    "description": "Automate government services and support functions within FCA",
+                    "expected": 99,
+                    "actual": 55,
+                    "bgColor": "#f2f2f2"
+                },
+                {
+                    "code": "E5I3",
+                    "title": "Initiatives",
+                    "description": "Build and activate cyber security capabilities",
+                    "expected": 99,
+                    "actual": 55,
+                    "bgColor": "#f2f2f2"
+                }
+            ]
+        }
+    ],
+    "depts": [
+        {
+            "code": "HR",
+            "title": "Human Resources",
+            "data": [
+                {
+                    "type": "la-heartbeat",
+                    "title": "Institutional health",
+                    "value": 100
+                },
+                {
+                    "type": "la-language",
+                    "title": "Emiratization",
+                    "value": 0
+                },
+                {
+                    "type": "la-people-carry",
+                    "title": "Staff training",
+                    "value": 92
+                },
+                {
+                    "type": "la-suitcase",
+                    "title": "Job turnover rate",
+                    "value": -1
+                },
+                {
+                    "type": "la-desktop",
+                    "title": "Percentage of remote workers",
+                    "value": 90
+                }
+                ,
+                {
+                    "type": "la-desktop",
+                    "title": "Job satisfaction ",
+                    "value": 70
+                }
+            ]
+        },
+        {
+            "code": "GS",
+            "title": "Government Services",
+            "data": [
+                {
+                    "type": "la-heartbeat",
+                    "title": "Customer satisfaction ",
+                    "value": 94
+                },
+                {
+                    "type": "la-language",
+                    "title": "Secret customer",
+                    "value": 50
+                },
+                {
+                    "type": "la-people-carry",
+                    "title": "% of work done within SLA period",
+                    "value": 70
+                },
+                {
+                    "type": "la-suitcase",
+                    "title": "Smart transformation of Govt. services",
+                    "value": 100
+                },
+                {
+                    "type": "la-desktop",
+                    "title": "Complaince to service response",
+                    "value": 20
+                },
+                {
+                    "type": "la-desktop",
+                    "title": "Average eService technical issues",
+                    "value": 47
+                }
+            ]
+        },
+        {
+            "code": "DG",
+            "title": "Digital Government",
+            "data": [
+                {
+                    "type": "la-heartbeat",
+                    "title": "Data maturity level",
+                    "value": 60
+                },
+                {
+                    "type": "la-language",
+                    "title": "Cyber ​​security maturity level in government agencies",
+                    "value": 91
+                },
+                {
+                    "type": "la-people-carry",
+                    "title": "Levels of compliance to data standards",
+                    "value": 0
+                },
+                {
+                    "type": "la-suitcase",
+                    "title": "Published open datasets On the Abu Dhabi Open Data Platform",
+                    "value": -1
+                },
+                {
+                    "type": "la-desktop",
+                    "title": "Information technology Infrastructure readiness",
+                    "value": 100
+                },
+                {
+                    "type": "la-desktop",
+                    "title": "Availability of data in required time",
+                    "value": 50
+                },
+                {
+                    "type": "la-desktop",
+                    "title": "Data Quality",
+                    "value": 0
+                },
+                {
+                    "type": "la-desktop",
+                    "title": "Comprehensiveness of the data",
+                    "value": -1
+                }
+            ]
+        },
+        {
+            "code": "FP",
+            "title": "Financial performace",
+            "data": [
+                {
+                    "type": "la-heartbeat",
+                    "title": "Revenue supplementation",
+                    "value": 100
+                },
+                {
+                    "type": "la-language",
+                    "title": "Cash management and financial planning",
+                    "value": 0
+                },
+                {
+                    "type": "la-people-carry",
+                    "title": "Cost rationalization and achievement Financial discretion",
+                    "value": 50
+                },
+                {
+                    "type": "la-suitcase",
+                    "title": "Compliance with laws and financial systems",
+                    "value": 80
+                },
+                {
+                    "type": "la-desktop",
+                    "title": "Finance team capabilities",
+                    "value": 95
+                }
+            ]
+        },
+        {
+            "code": "GP",
+            "title": "Government procurement",
+            "data": [
+                {
+                    "type": "la-heartbeat",
+                    "title": "GWA - Group Government Contracting",
+                    "value": 20
+                },
+                {
+                    "type": "la-language",
+                    "title": "Complaince toward local content policy",
+                    "value": 0
+                },
+                {
+                    "type": "la-people-carry",
+                    "title": "% of purchase from micro and small enterprises",
+                    "value": 100
+                },
+                {
+                    "type": "la-suitcase",
+                    "title": "Financial commitment toward suppliers",
+                    "value": -1
+                }
+            ]
         }
     ]
 }

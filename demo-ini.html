@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCA | Dashboard | Demo KPI</title>
+
+    <link rel="stylesheet" href="/assets/css/line-awesome.min.css" />
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+
+<body>
+    <div class="demo">
+        <marquee>This is demo data, it will be refreshed automatically if you reload or leave this page.</marquee>
+    </div>
+    <div id="app" class="d-flex wrapper">
+        <!-- Side Menu -->
+        <div class="side-menu shadow">
+            <div class="menu-container">
+                <!-- Header menu -->
+                <div class="logo">
+                    <a href="/" title="EOV">
+                        <img src="/assets/img/logo.png" class="img-fluid" />
+                    </a>
+                </div>
+                <div class="main-menu">
+                    <a href="demo-dashboard.html" title="Dashboard"><i class="las la-tachometer-alt"></i></a>
+                    <a href="#" title="Organization"><i class="las la-university"></i></a>
+                    <a href="index.html" class="active" title="Objectives"><i class="las la-server"></i></a>
+                    <a href="#" title="Reports"><i class="las la-chart-pie"></i></a>
+                </div>
+                <!-- Footer menu -->
+                <div class="footer-menu">
+                    <a href="#" title="Settings"><i class="las la-cog"></i></a>
+                    <a href="#" class="avatar shadow">
+                        <img src="/assets/img/avatar.png" />
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Placeholder for work area -->
+        <main>
+
+            <!-- Header headlines -->
+            <header>
+                <div class="heading">
+                    <h2 class="p-0 m-0">KPI</h2>
+                    <span class="text-muted p-0 m-0">KPI in details</span>
+                </div>
+                <div class="quick-menu">
+                    <a href="#"><i class="las la-bell"></i></a>
+                    <a href="#"><i class="las la-ellipsis-v"></i></a>
+                </div>
+            </header>
+
+
+            <section class="container-fluid">
+
+                <div class="row">
+                    
+                    <div class="col-12 text-end">
+                        <div class="d-flex flex-row-reverse my-2 gap-2">
+                            <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle"
+                            ><i class="las la-download"></i></button>
+                        <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle"
+                            ><i class="las la-filter"></i></button>
+                        
+                            <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle"
+                            ><i class="las la-search"></i></button>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <h1 class="bg-light my-4 py-3">Initiatives Level</h1>
+                    </div>
+
+                    <div class="col-12">
+                        <h2 class="my-2 py-3">{{demoINI.code}} - {{demoINI.title}}</h2>
+                    </div>
+
+                   
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+
+                        <h5>Description</h5>
+                        <p>{{demoINI.description}}</p>
+
+                        <div class="row">
+                            <div class="col-6 bg-light mb-4">
+        
+                                <div class="card border-0 mt-2 mb-4 rounded-0">
+                                    <div class="card-header">
+                                        <div class="card-title p-0 m-0">
+                                            <div
+                                                class="d-flex justify-content-between align-items-center gap-2">
+                                                <h6 class="text-uppercase p-0 my-2">
+                                                    PROJECT BUDGET
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h3>{{demoINI.budget.project}}</h3>
+                                    </div>
+        
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 bg-light mb-4">
+                                
+                                <div class="card border-0 mt-2 mb-4 rounded-0">
+                                    <div class="card-header">
+                                        <div class="card-title p-0 m-0">
+                                            <div
+                                                class="d-flex justify-content-between align-items-center gap-2">
+                                                <h6 class="text-uppercase p-0 my-2">
+                                                    SPENT BUDGET
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h3>{{demoINI.budget.spent}}</h3>
+                                    </div>
+        
+                                </div>
+
+                            </div>
+                        </div>
+                        
+
+                        <div class="card border-0 my-4 rounded-0">
+                            <div class="card-header">
+                                <div class="card-title p-0 m-0">
+                                    <div
+                                        class="d-flex justify-content-between align-items-center gap-2">
+                                        <h6 class="text-uppercase p-0 my-2">
+                                            Accomplishment
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body bg-light">
+                                <div class="form-control border-0 rounded-0 py-4"  contenteditable>
+                                    {{demoINI.accomplishment}}<br /><br /><br /><br /><br />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card border-0 my-4 rounded-0">
+                            <div class="card-header">
+                                <div class="card-title p-0 m-0">
+                                    <div
+                                        class="d-flex justify-content-between align-items-center gap-2">
+                                        <h6 class="text-uppercase p-0 my-2">
+                                            Analysis
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body bg-light">
+                                <div class="form-control border-0 rounded-0 py-4"  contenteditable>
+                                    {{demoINI.analysis}}<br /><br /><br /><br /><br />
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="card border-0 mt-2 mb-4 rounded-0">
+                            <div class="card-header">
+                                <div class="card-title p-0 m-0">
+                                    <div
+                                        class="d-flex justify-content-between align-items-center gap-2">
+                                        <h6 class="text-uppercase p-0 my-2">
+                                           Project Milestones
+                                        </h6>
+                                        <div>
+                                            <button type="button"
+                                                class="btn btn-outline-secondary rounded-0">
+                                                <i class="las la-plus"></i> Add milestone
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body mb-4">
+
+                                <div class="progress">
+                                    <div v-bind:style="{ width: demoINI.result1+'%' }" v-bind:data-value="demoINI.result1+'%'"></div>
+                                    <div v-bind:style="{ width: demoINI.result2+'%' }" v-bind:data-value="demoINI.result2+'%'"></div>
+                                </div>
+
+                                <div class="kpi-item" v-for="(dt, kIndex) in demoINI.milestones" :key="kIndex" :style="{ background: dt.bgColor }">
+                                    <div class="title">
+                                        <h6 class="m-0 p-0 fw-normal">
+                                            <a href="#" data-bs-toggle="tooltip" :data-bs-title="dt.description">{{dt.title}}</a>
+                                        </h6>
+                                    </div>
+                                    <div class="result" :class="[(dt.status == 'done') ? 'bg-success' : '', (dt.status == 'progress')? 'bg-warning' : '', (dt.status == 'overdue') ? 'bg-danger': '']">
+                                        <small class="fs-6 p-2 fw-normal text-capitalize">{{dt.value}}</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="card border-0 mt-2 mb-4 rounded-0">
+                            <div class="card-header">
+                                <div class="card-title p-0 m-0">
+                                    <div
+                                        class="d-flex justify-content-between align-items-center gap-2">
+                                        <h6 class="text-uppercase p-0 my-2">
+                                            Challeneges
+                                        </h6>
+                                        <div>
+                                            <button type="button"
+                                                class="btn btn-outline-secondary rounded-0">
+                                                <i class="las la-plus"></i> Add Challenege
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body mb-4">
+                                <div class="kpi-item" v-for="(dt, kIndex) in demoINI.challeneges" :key="kIndex" :style="{ background: dt.bgColor }">
+                                    <div class="title">
+                                        <h6 class="m-0 p-0 fw-normal">
+                                            <a href="#" data-bs-toggle="tooltip" :data-bs-title="dt.description">{{dt.title}}</a>
+                                        </h6>
+                                    </div>
+                                    <div class="result" :class="[(dt.status == 'done') ? 'bg-success' : '', (dt.status == 'progress')? 'bg-warning' : '', (dt.status == 'overdue') ? 'bg-danger': '']">
+                                        <small class="fs-6 p-2 fw-normal text-capitalize">{{dt.status}}</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="card border-0 mt-2 mb-4 rounded-0">
+                            <div class="card-header">
+                                <div class="card-title p-0 m-0">
+                                    <div
+                                        class="d-flex justify-content-between align-items-center gap-2">
+                                        <h6 class="text-uppercase p-0 my-2">
+                                            Risks
+                                        </h6>
+                                        <div>
+                                            <button type="button"
+                                                class="btn btn-outline-secondary rounded-0">
+                                                <i class="las la-plus"></i> Add risk
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body mb-4">
+                                <div class="kpi-item" v-for="(dt, kIndex) in demoINI.risks" :key="kIndex" :style="{ background: dt.bgColor }">
+                                    <div class="title">
+                                        <h6 class="m-0 p-0 fw-normal">
+                                            <a href="#" data-bs-toggle="tooltip" :data-bs-title="dt.description">{{dt.title}}</a>
+                                        </h6>
+                                    </div>
+                                    <div class="result" :class="[(dt.status == 'medium') ? 'bg-success' : '', (dt.status == 'low')? 'bg-warning' : '', (dt.status == 'high') ? 'bg-danger': '']">
+                                        <small class="fs-6 p-2 fw-normal text-capitalize">{{dt.status}}</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- right panel -->
+                    <div class="col-md-4">
+
+                        <div class="alert alert-success rounded-0 mb-4">
+                            <div class="text-center fs-2 text-uppercase">{{demoINI.status}}</div>
+                        </div>
+
+                        <div class="bg-light p-5 text-center">
+                            <canvas class="pieChart"></canvas>
+                        </div>
+
+                        <div class="row gy-2 mt-4">
+                            <div class="col-12" v-for="tag in demoINI.tags">
+                                <div class="bg-light border-start border-5 p-3 fs-5">
+                                    {{tag.key}}: <strong>{{tag.value}}</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                
+
+            </section>
+
+           <p class="p-5">&nbsp;</p>
+
+        </main>
+
+
+
+    </div>
+
+    <script src="/assets/js/jquery-3.6.3.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/jquery.toaster.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/assets/js/script.js"></script>
+
+    
+
+    <script>
+
+        const ctxPies = document.querySelectorAll('.pieChart');
+
+        ctxPies.forEach(ctxPie => {
+
+            new Chart(ctxPie, {
+                type: 'pie',
+                data: {
+                  labels: ['Targeted', 'Achived'],
+                  datasets: [{
+                          label: 'Dataset 1',
+                          data: [ (Math.round(Math.random(40, 90)*100)), (Math.round(Math.random(60, 90)*100))],
+                          backgroundColor: ['#EFEFEF','#3DC18D']
+                      }
+                  ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                      legend: {
+                        position: 'bottom',
+                      },
+                      title: {
+                        display: true,
+                        text: 'Initiative Information'
+                      }
+                    }
+                }
+              });
+
+
+        }); 
+
+    </script>
+
+</body>
+
+</html>

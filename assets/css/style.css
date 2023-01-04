@@ -267,6 +267,14 @@ header .quick-menu a:hover {
     background-color: #ebebeb;
 }
 
+.kpi-item a {
+    color: #202020;
+    text-decoration: none;
+}
+.kpi-item a:hover{
+    text-decoration: underline;
+}
+
 .kpi-item:first-child {
     margin-top: 10px;
 } 
@@ -347,6 +355,14 @@ header .quick-menu a:hover {
     text-align: center;
     display: inline-block;
     margin-right: 4px;
+}
+
+.card-body .kpi-item {
+    opacity: 0.8;
+}
+
+.card-body .kpi-item:hover {
+    opacity: 1;
 }
 
 .modal-fullscreen {

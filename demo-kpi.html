@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCA | Dashboard | Demo INITATIVES</title>
+
+    <link rel="stylesheet" href="/assets/css/line-awesome.min.css" />
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+
+<body>
+    <div class="demo">
+        <marquee>This is demo data, it will be refreshed automatically if you reload or leave this page.</marquee>
+    </div>
+    <div id="app" class="d-flex wrapper">
+        <!-- Side Menu -->
+        <div class="side-menu shadow">
+            <div class="menu-container">
+                <!-- Header menu -->
+                <div class="logo">
+                    <a href="/" title="EOV">
+                        <img src="/assets/img/logo.png" class="img-fluid" />
+                    </a>
+                </div>
+                <div class="main-menu">
+                    <a href="demo-dashboard.html" title="Dashboard"><i class="las la-tachometer-alt"></i></a>
+                    <a href="#" title="Organization"><i class="las la-university"></i></a>
+                    <a href="index.html" class="active" title="Objectives"><i class="las la-server"></i></a>
+                    <a href="#" title="Reports"><i class="las la-chart-pie"></i></a>
+                </div>
+                <!-- Footer menu -->
+                <div class="footer-menu">
+                    <a href="#" title="Settings"><i class="las la-cog"></i></a>
+                    <a href="#" class="avatar shadow">
+                        <img src="/assets/img/avatar.png" />
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Placeholder for work area -->
+        <main>
+
+            <!-- Header headlines -->
+            <header>
+                <div class="heading">
+                    <h2 class="p-0 m-0">KPI</h2>
+                    <span class="text-muted p-0 m-0">KPI in details</span>
+                </div>
+                <div class="quick-menu">
+                    <a href="#"><i class="las la-bell"></i></a>
+                    <a href="#"><i class="las la-ellipsis-v"></i></a>
+                </div>
+            </header>
+
+
+            <section class="container-fluid">
+
+                <div class="row">
+                    
+                    <div class="col-12 text-end">
+                        <div class="d-flex flex-row-reverse my-2 gap-2">
+                            <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle"
+                            ><i class="las la-download"></i></button>
+                        <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle"
+                            ><i class="las la-filter"></i></button>
+                        
+                            <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle"
+                            ><i class="las la-search"></i></button>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <h1 class="bg-light my-4 py-3">KPI Level</h1>
+                    </div>
+
+                    <div class="col-12">
+                        <h2 class="my-2 py-3">{{demoKPI.code}} - {{demoKPI.title}}</h2>
+                    </div>
+
+                    <div class="col-12">
+                        <h5>Description</h5>
+                        <p>{{demoKPI.description}}</p>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="progress">
+                            <div v-bind:style="{ width: demoKPI.result1+'%' }" v-bind:data-value="demoKPI.result1+'%'"></div>
+                            <div v-bind:style="{ width: demoKPI.result2+'%' }" v-bind:data-value="demoKPI.result2+'%'"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row gy-2">
+                    <div class="col-4" v-for="tag in demoKPI.tags">
+                        <div class="bg-light border-start border-5 p-3 fs-5">
+                            {{tag.key}}: <strong>{{tag.value}}</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="bg-light my-4 py-3">KPI Indicator</h1>
+                    </div>
+                </div>
+                <!-- KPI data -->
+                <div class="row">
+                    <div class="col-2" v-for="q in demoKPI.data[0].quaters">
+                        <div class="card rounded-0">
+                            <div class="card-header">
+                                <h4>{{q.key}}</h4>
+                            </div>
+                            <div class="card-body fs-2 text-center fw-bolder">
+                                <span contenteditable>{{q.value}}</span>%
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2" v-for="(q, qIndex) in demoKPI.data.slice(1)" :key="qIndex">
+                        <div class="card rounded-0">
+                            <div class="card-header">
+                                <h4>{{q.year}}</h4>
+                            </div>
+                            <div class="card-body fs-2 bg-light text-center fw-bolder">
+                                {{q.total}}%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graph -->
+                <div class="row my-4">
+                    <div class="col-12">
+                        <h5 class="fw-light">KPI PROGRESS GRAPH</h5>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <div class="p-4 bg-light">
+                            <canvas id="myChart" style="height: 400px; width: 100%; margin: 0 auto;"></canvas>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 bg-light mb-4">
+
+                        <div class="card border-0 mt-2 mb-4 rounded-0">
+                            <div class="card-header">
+                                <div class="card-title p-0 m-0">
+                                    <div
+                                        class="d-flex justify-content-between align-items-center gap-2">
+                                        <h6 class="text-uppercase p-0 my-2">
+                                            Challeneges
+                                        </h6>
+                                        <div>
+                                            <button type="button"
+                                                class="btn btn-outline-secondary rounded-0">
+                                                <i class="las la-plus"></i> Add Challenege
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body mb-4">
+                                <div class="kpi-item" v-for="(dt, kIndex) in demoKPI.challeneges" :key="kIndex" :style="{ background: dt.bgColor }">
+                                    <div class="title">
+                                        <h6 class="m-0 p-0 fw-normal">
+                                            <a href="#" data-bs-toggle="tooltip" :data-bs-title="dt.description">{{dt.title}}</a>
+                                        </h6>
+                                    </div>
+                                    <div class="result" :class="[(dt.status == 'done') ? 'bg-success' : '', (dt.status == 'progress')? 'bg-warning' : '', (dt.status == 'overdue') ? 'bg-danger': '']">
+                                        <small class="fs-6 p-2 fw-normal text-capitalize">{{dt.status}}</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                    <div class="col-6 bg-light mb-4">
+                        <div class="card border-0 mt-2 rounded-0">
+                            <div class="card-header">
+                                <div class="card-title p-0 m-0">
+                                    <div
+                                        class="d-flex justify-content-between align-items-center gap-2">
+                                        <h6 class="text-uppercase p-0 my-2">
+                                            Analysis
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body bg-light">
+                                <div class="form-control border-0 rounded-0 py-4"  contenteditable>
+                                    {{demoKPI.analysis}}<br /><br /><br /><br /><br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--OTHER INFORMATION-->
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="bg-light my-4 py-3">Other Information</h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-12">
+                                <h3>Related KPIs</h3>
+                            </div>
+                            <div class="col-md-6">
+                                
+                                <div class="bg-light p-5 text-center">
+                                    <canvas class="pieChart"></canvas>
+                                    <a class="btn btn-secondary mt-2">Details</a>
+                                </div>
+
+                                
+                            </div>
+                            <div class="col-md-6">
+                                <div class="bg-light p-5 text-center">
+                                    <canvas class="pieChart"></canvas>
+                                    <a class="btn btn-secondary mt-2">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Related Initiatives</h3>
+                        <div class="bg-light p-5 text-center">
+                            <canvas class="pieChart"></canvas>
+                            <a class="btn btn-secondary mt-2">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+           <p class="p-5">&nbsp;</p>
+
+        </main>
+
+
+
+    </div>
+
+    <script src="/assets/js/jquery-3.6.3.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/jquery.toaster.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/assets/js/script.js"></script>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+      
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['Q1', 'Q2', 'Q3', '2020', 'Q1', 'Q2', 'Q3', '2021', 'Q1', 'Q2', 'Q3', '2022'],
+            datasets: [{
+                    label: 'Targeted',
+                    data: [60, 80, 70, 90, 40, 30, 60, 80, 90, 75, 95, 100],
+                    borderWidth: 4,
+                    borderColor: '#979797',
+                    backgroundColor: '#979797',
+                },
+                {
+                    label: 'Achived',
+                    data: [30, 40, 30, 40, 80, 20, 80, 80, 70, 50, 80, 20],
+                    borderWidth: 4,
+                    borderColor: '#66be91',
+                    backgroundColor: '#66be91',
+                }
+            ]
+          },
+          options: {
+            /*animations: {
+                tension: {
+                  duration: 1000,
+                  easing: 'linear',
+                  from: 1,
+                  to: 0,
+                  loop: true
+                }
+              },*/
+            responsive: true,
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+
+    </script>
+
+    <script>
+
+        const ctxPies = document.querySelectorAll('.pieChart');
+
+        ctxPies.forEach(ctxPie => {
+
+            new Chart(ctxPie, {
+                type: 'pie',
+                data: {
+                  labels: ['Targeted', 'Achived'],
+                  datasets: [{
+                          label: 'Dataset 1',
+                          data: [ (Math.round(Math.random(40, 90)*100)), (Math.round(Math.random(60, 90)*100))],
+                          backgroundColor: ['#EFEFEF','#3DC18D']
+                      }
+                  ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                      legend: {
+                        position: 'bottom',
+                      },
+                      title: {
+                        display: true,
+                        text: 'KPIs Information'
+                      }
+                    }
+                }
+              });
+
+
+        }); 
+
+    </script>
+
+</body>
+
+</html>

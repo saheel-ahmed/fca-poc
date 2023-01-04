@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCA | Dashboard</title>
+
+    <link rel="stylesheet" href="/assets/css/line-awesome.min.css" />
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+
+<body>
+    <div class="demo">
+        <marquee>This is demo data, it will be refreshed automatically if you reload or leave this page.</marquee>
+    </div>
+    <div id="app" class="d-flex wrapper">
+        <!-- Side Menu -->
+        <div class="side-menu shadow">
+            <div class="menu-container">
+                <!-- Header menu -->
+                <div class="logo">
+                    <a href="/" title="EOV">
+                        <img src="/assets/img/logo.png" class="img-fluid" />
+                    </a>
+                </div>
+                <div class="main-menu">
+                    <a href="demo-dashboard.html" class="active" title="Dashboard"><i class="las la-tachometer-alt"></i></a>
+                    <a href="#" title="Organization"><i class="las la-university"></i></a>
+                    <a href="index.html" title="Objectives"><i class="las la-server"></i></a>
+                    <a href="#" title="Reports"><i class="las la-chart-pie"></i></a>
+                </div>
+                <!-- Footer menu -->
+                <div class="footer-menu">
+                    <a href="#" title="Settings"><i class="las la-cog"></i></a>
+                    <a href="#" class="avatar shadow">
+                        <img src="/assets/img/avatar.png" />
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Placeholder for work area -->
+        <main>
+
+            <!-- Header headlines -->
+            <header>
+                <div class="heading">
+                    <h2 class="p-0 m-0">Department</h2>
+                    <span class="text-muted p-0 m-0">Departments in details</span>
+                </div>
+                <div class="quick-menu">
+                    <a href="#"><i class="las la-bell"></i></a>
+                    <a href="#"><i class="las la-ellipsis-v"></i></a>
+                </div>
+            </header>
+
+
+            <section class="container-fluid">
+
+                <div class="row">
+                    
+                    <div class="col-12 text-end">
+                        <div class="d-flex flex-row-reverse my-2 gap-2">
+                            <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle"
+                            ><i class="las la-download"></i></button>
+                        <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle"
+                            ><i class="las la-filter"></i></button>
+                        
+                            <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle"
+                            ><i class="las la-search"></i></button>
+                            
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row g-2">
+
+                    <div class="col" v-for="dept in db.depts">
+
+                        <div class="card border-1 rounded-0">
+                            <div class="card-header text-center">
+                                <h5 class="text-truncate m-0 p-0">{{dept.title}}</h5>
+                            </div>
+                            <div class="card-body">
+
+                                <div class="kpi-item" v-for="(dt, kIndex) in dept.data" :key="kIndex">
+                                    <div class="title">
+                                        <h6 class="m-0 p-0 fw-normal">
+                                            <a href="demo-dept.html" data-bs-toggle="tooltip" :data-bs-title="dt.title">{{dt.title}}</a>
+                                        </h6>
+                                    </div>
+                                    <div class="result rounded-circle" :class="
+                                        [
+                                        (dt.value === -1) ? 'bg-dark' : '', 
+                                        (dt.value === 0)? 'bg-secondary' : '', 
+                                        (dt.value === 100) ? 'bg-success': '',
+                                        (dt.value > 90 && dt.value < 100) ? 'bg-warning text-dark': '',
+                                        (dt.value <= 90 && dt.value > 0 ) ? 'bg-danger': '',
+                                        ]">
+                                        <small class="fs-6 p-2 fw-normal text-capitalize text-center lh-1">
+                                            <span v-if="dt.value == -1">N/A</span>
+                                            <span v-else-if="dt.value == 0">No Data</span>
+                                            <span v-else>{{dt.value}}%</span>
+                                        </small>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                
+
+            </section>
+
+           <p class="p-5">&nbsp;</p>
+
+        </main>
+
+
+
+    </div>
+
+    <script src="/assets/js/jquery-3.6.3.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/jquery.toaster.js"></script>
+    <script src="/assets/js/script.js"></script>
+
+</body>
+</html>

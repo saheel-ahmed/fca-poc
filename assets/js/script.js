@@ -18,6 +18,177 @@ const { createApp } = Vue
             ini: [],
             result1: 0,
             result2: 0
+        },
+        enabler: {
+            code: '',
+            title: '',
+            kpi: [],
+            ini: []
+        },
+        demoKPI: {
+            code: "P1SO1K1",
+            title: "Integrated case management setup",
+            description: "The KPI measures the percentage completion of Integrated Case Management set-up",
+            pTitle: 'Advanced and unified case management',
+            oTitle: 'Deploy ICM',
+            tags: [
+                { key: 'KPI type', value: 'Strategic', label: '(Strategic, Operational)' },
+                { key: 'Measurement unit', value: '%', label: '' },
+                { key: 'Targeted direction', value: 'Increase', label: '' },
+                { key: 'Frequency', value: 'Monthly', label: '' },
+                { key: 'Data source', value: 'Report', label: '' },
+                { key: 'KPI owner', value: 'Supporting Services Sector', label: '' },
+            ],
+            data: [
+                {
+                    year: 2023,
+                    quaters: [
+                        { key: 'Q1', value: 20 },
+                        { key: 'Q2', value: 40 },
+                        { key: 'Q3', value: 60 },
+                        { key: 'Q4', value: 80 }
+                    ],
+                    total: 0
+                },
+                {
+                    year: 2024,
+                    total: 100
+                },
+                {
+                    year: 2025,
+                    total: 100
+                }
+            ],
+            challeneges: [
+                {
+                    title: 'Complete the Procument Process',
+                    status: 'done'
+                },
+                {
+                    title: 'User Acceptance challenge',
+                    status: 'overdue'
+                },
+                {
+                    title: 'Complete the Procument Process',
+                    status: 'progress'
+                }
+            ],
+            analysis: 'The KPI measures the percentage completion of Integrated Case Management set-up. Identify extension systems including document and file management, advanced collaboration and correspondence management and financial tracking and accountability. License management and Continuing Professional Development (CPD) management.',
+            result1: 70,
+            result2: 30
+        },
+        demoINI: {
+            code: "P1SO1I1",
+            title: "Initiatives",
+            description: "Roll out and activate the Integrated case management system",
+            pTitle: 'Advanced and unified case management',
+            oTitle: 'Deploy ICM',
+            tags: [
+                { key: 'KPI type', value: 'Strategic', label: '(Strategic, Operational)' },
+                { key: 'Measurement unit', value: '%', label: '' },
+                { key: 'Targeted direction', value: 'Increase', label: '' },
+                { key: 'Frequency', value: 'Monthly', label: '' },
+                { key: 'Data source', value: 'Report', label: '' },
+                { key: 'KPI owner', value: 'Supporting Services Sector', label: '' },
+            ],
+            budget: {
+                project: '2,300,000 AED',
+                spent: '300,000 AED'
+            },
+            accomplishment: 'The KPI measures the percentage completion of Integrated Case Management set-up. Identify extension systems including document and file management, advanced collaboration and correspondence management and financial tracking and accountability. License management and Continuing Professional Development (CPD) management.',
+            analysis: 'The KPI measures the percentage completion of Integrated Case Management set-up. Identify extension systems including document and file management, advanced collaboration and correspondence management and financial tracking and accountability. License management and Continuing Professional Development (CPD) management.',
+            result1: 70,
+            result2: 30,
+            status: 'Completed',
+            milestones: [
+                {
+                    title: 'Complete the Procument Process',
+                    status: 'done',
+                    value: '100%'
+                },
+                {
+                    title: 'User Acceptance challenge',
+                    status: 'done',
+                    value: '100%'
+                },
+                {
+                    title: 'Complete the Procument Process',
+                    status: 'progress',
+                    value: '30%'
+                }
+            ],
+            challeneges: [
+                {
+                    title: 'Complete the Procument Process',
+                    status: 'done'
+                },
+                {
+                    title: 'User Acceptance challenge',
+                    status: 'overdue'
+                },
+                {
+                    title: 'Complete the Procument Process',
+                    status: 'progress'
+                }
+            ],
+            risks: [
+                {
+                    title: 'Complete the Procument Process',
+                    status: 'high'
+                },
+                {
+                    title: 'User Acceptance challenge',
+                    status: 'low'
+                },
+                {
+                    title: 'Complete the Procument Process',
+                    status: 'medium'
+                }
+            ]
+        },
+        demoDept: {
+            code: "HR",
+            title: "Human Resources",
+            description: "Roll out and activate the Integrated case management system",
+            budget: {
+                project: '2,300,000 AED',
+                spent: '300,000 AED'
+            },
+            accomplishment: 'The KPI measures the percentage completion of Integrated Case Management set-up. Identify extension systems including document and file management, advanced collaboration and correspondence management and financial tracking and accountability. License management and Continuing Professional Development (CPD) management.',
+            analysis: 'The KPI measures the percentage completion of Integrated Case Management set-up. Identify extension systems including document and file management, advanced collaboration and correspondence management and financial tracking and accountability. License management and Continuing Professional Development (CPD) management.',
+            result1: 70,
+            result2: 30,
+            accomplishments: [
+                {
+                    title: 'Accessories Here you can find the best computer accessor.',
+                    status: 'done',
+                    value: '100%'
+                },
+                {
+                    title: 'Accessories Here you can find the best computer accessor.',
+                    status: 'done',
+                    value: '100%'
+                },
+                {
+                    title: 'Accessories Here you can find the best computer accessor.',
+                    status: 'progress',
+                    value: '30%'
+                }
+            ],
+            challeneges: [
+                {
+                    title: 'Complete the Procument Process',
+                    status: 'done'
+                },
+                {
+                    title: 'User Acceptance challenge',
+                    status: 'overdue'
+                },
+                {
+                    title: 'Complete the Procument Process',
+                    status: 'progress'
+                }
+            ]
         }
       }
     },
@@ -146,6 +317,10 @@ const { createApp } = Vue
         fnRemoveKPI : function (kIndex,  targetObj){
             targetObj.splice(kIndex, 1);
             this.fnCalc();
+        },
+        fnViewEnabler: function(enbler) {
+            this.enabler = enbler;
+            $('#enablerPopup').modal('show');
         } 
     }
   }).mount('#app');
@@ -171,4 +346,17 @@ const { createApp } = Vue
         $(triangle).css(triangleCss);
     });
 
+    
+
+    $("#priorityPopup").on('show.bs.modal', function(){
+        setTimeout(function(){
+            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        }, 400);
+    });
+    
+
   });
+
+  
+

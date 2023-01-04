@@ -30,9 +30,9 @@
                     </a>
                 </div>
                 <div class="main-menu">
-                    <a href="#" title="Dashboard"><i class="las la-tachometer-alt"></i></a>
+                    <a href="demo-dashboard.html" title="Dashboard"><i class="las la-tachometer-alt"></i></a>
                     <a href="#" title="Organization"><i class="las la-university"></i></a>
-                    <a href="#" class="active" title="Objectives"><i class="las la-server"></i></a>
+                    <a href="index.html" class="active" title="Objectives"><i class="las la-server"></i></a>
                     <a href="#" title="Reports"><i class="las la-chart-pie"></i></a>
                 </div>
                 <!-- Footer menu -->
@@ -140,14 +140,15 @@
                     
                 </div>
                
+                <!-- enablers -->
                 <div class="py-4 px-2">
 
-                    <div class="accordion-header mb-2" v-for="enable in db.enabler">
-                        <button type="button" class="tag btn btn-secondary rounded-0">
-                            <h1>{{enable.code}}</h1>
+                    <div class="accordion-header mb-2" v-for="enabler in db.enablers">
+                        <button type="button" class="tag btn btn-secondary rounded-0" @click="fnViewEnabler(enabler)">
+                            <h1>{{enabler.code}}</h1>
                         </button>
                         <div class="title">
-                            <h5 class="m-0 p-0 fw-normal text-truncate">{{enable.title}}</h5>
+                            <h5 class="m-0 p-0 fw-normal text-truncate">{{enabler.title}}</h5>
                         </div>
                         <div class="action gap-1">
                             <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle"
@@ -167,7 +168,7 @@
                 <div class="modal-dialog modal-fullscreen">
                     <div class="modal-content" v-if="objectiveMode === 'view'">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Objective</h1>
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Strategic initiatives and KPIs</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -235,11 +236,11 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-body">
-                                                        <div class="kpi-item" v-for="(dt, kIndex) in objective.kpi" :key="kIndex">
+                                                        <div class="kpi-item" v-for="(dt, kIndex) in objective.kpi" :key="kIndex" :style="{ background: dt.bgColor }">
                                                             <div class="title">
                                                                 <h6 class="m-0 p-0 fw-normal">
-                                                                    <button type="button" class="btn btn-outline-danger border-0 rounded-circle" @click="fnRemoveKPI(kIndex,  objective.kpi)"><i class="las la-times-circle"></i></button>
-                                                                    <span class="fw-bolder">{{dt.code}} -</span> {{dt.title}}
+                                                                    <button type="button" class="btn btn-outline-danger border-0 rounded-circle d-none" @click="fnRemoveKPI(kIndex,  objective.kpi)"><i class="las la-times-circle"></i></button>
+                                                                    <a href="demo-kpi.html" data-bs-toggle="tooltip" :data-bs-title="dt.description"><span class="fw-bolder">{{dt.code}} -</span> {{dt.title}}</a>
                                                                 </h6>
                                                             </div>
                                                             <div class="result expected" data-headline="expected" data-baseline="%">
@@ -276,16 +277,144 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-body">
-                                                        <div class="kpi-item" v-for="(dt, kIndex) in objective.ini" :key="kIndex">
+                                                        <div class="kpi-item" v-for="(dt, kIndex) in objective.ini" :key="kIndex" :style="{ background: dt.bgColor }">
                                                             <div class="title">
-                                                                <button type="button" class="btn btn-outline-danger border-0 rounded-circle" @click="fnRemoveKPI(kIndex,  objective.ini)"><i class="las la-times-circle"></i></button>
-                                                                <h6 class="m-0 p-0 fw-normal"><span class="fw-bolder">{{dt.code}} -</span> {{dt.title}}</h6>
+                                                                <button type="button" class="btn btn-outline-danger border-0 rounded-circle d-none" @click="fnRemoveKPI(kIndex,  objective.ini)"><i class="las la-times-circle"></i></button>
+                                                                <h6 class="m-0 p-0 fw-normal">
+                                                                    <a href="demo-ini.html" data-bs-toggle="tooltip" :data-bs-title="dt.description"><span class="fw-bolder">{{dt.code}} -</span> {{dt.title}}</a>
+                                                                </h6>
                                                             </div>
                                                             <div class="result expected" data-headline="expected" data-baseline="%">
                                                                 <span>{{dt.expected}}</span>
                                                             </div>
                                                             <div class="result" data-headline="actual" data-baseline="%">
                                                                 <input v-model="dt.actual" class="form-control border-0 rounded-0 text-center" maxlength="3" @keyup="fnCalc()" onkeypress="return /[0-9]/i.test(event.key)" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enabler Modal Popup -->
+            <div class="modal fade" id="enablerPopup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+                <div class="modal-dialog modal-fullscreen">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Operational KPIs and initiatives</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="container">
+                               
+                                <div class="row">
+
+                                    <div class="col mb-4">
+
+                                        <div class="priority">
+                                            <div class="tag d-flex align-items-center justify-content-center">
+                                                <h6 class="p-0 m-0 fw-bolder">{{enabler.code}}</h6>
+                                            </div>
+                                            <div class="title">
+                                                <h6 class="m-0 p-0 fw-normal text-truncate">
+                                                    <span></span>
+                                                    <span
+                                                        class="text-uppercase">{{enabler.title}}</span>
+                                                </h6>
+                                            </div>
+                                        </div>
+
+                                       
+
+                                        <!-- KPIs + Intatives -->
+                                        <div class="row">
+
+                                            <div class="col-md-6">
+
+                                                <div class="card border-0 mt-2 rounded-0">
+                                                    <div class="card-header">
+                                                        <div class="card-title p-0 m-0">
+                                                            <div
+                                                                class="d-flex justify-content-between align-items-center gap-2">
+                                                                <h6 class="text-uppercase p-0 my-2">
+                                                                    Strategic KPIs
+                                                                </h6>
+                                                                <div>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-secondary rounded-0 d-none"
+                                                                        @click="fnAddKPI('KPI')">
+                                                                        <i class="las la-plus"></i> Add KPIs
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="kpi-item" v-for="(dt, kIndex) in enabler.kpi" :key="kIndex" :style="{ background: dt.bgColor }">
+                                                            <div class="title">
+                                                                <h6 class="m-0 p-0 fw-normal">
+                                                                    <a href="#" data-bs-toggle="tooltip" :data-bs-title="dt.description"><span class="fw-bolder">{{dt.code}} -</span> {{dt.title}}</a>
+                                                                </h6>
+                                                            </div>
+                                                            <div class="result expected" data-headline="expected" data-baseline="%">
+                                                                <span>{{dt.expected}}</span>
+                                                            </div>
+                                                            <div class="result" data-headline="actual" data-baseline="%">
+                                                                <input v-model="dt.actual" class="form-control border-0 rounded-0 text-center" onkeypress="return /[0-9]/i.test(event.key)" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="col-md-6">
+
+                                                <div class="card border-0 mt-2 rounded-0">
+                                                    <div class="card-header">
+                                                        <div class="card-title p-0 m-0">
+                                                            <div
+                                                                class="d-flex justify-content-between align-items-center gap-2">
+                                                                <h6 class="text-uppercase p-0 my-2">
+                                                                    Strategic initiatives
+                                                                </h6>
+                                                                <div>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-secondary rounded-0 d-none"
+                                                                        @click="fnAddKPI('INIT')">
+                                                                        <i class="las la-plus"></i> Add initiatives
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="kpi-item" v-for="(dt, kIndex) in enabler.ini" :key="kIndex" :style="{ background: dt.bgColor }">
+                                                            <div class="title">
+                                                                <h6 class="m-0 p-0 fw-normal">
+                                                                    <a href="#" data-bs-toggle="tooltip" :data-bs-title="dt.description"><span class="fw-bolder">{{dt.code}} -</span> {{dt.title}}</a>
+                                                                </h6>
+                                                            </div>
+                                                            <div class="result expected" data-headline="expected" data-baseline="%">
+                                                                <span>{{dt.expected}}</span>
+                                                            </div>
+                                                            <div class="result" data-headline="actual" data-baseline="%">
+                                                                <input v-model="dt.actual" class="form-control border-0 rounded-0 text-center" maxlength="3" onkeypress="return /[0-9]/i.test(event.key)" />
                                                             </div>
                                                         </div>
                                                     </div>
