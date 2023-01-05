@@ -154,7 +154,6 @@ header .quick-menu a:hover {
     align-items: stretch;
     justify-items: center;
     background-color: #d1dadb5c;
-    height: 64px;
 }
 .accordion-header div{
     display: flex;
@@ -410,7 +409,7 @@ header .quick-menu a:hover {
 }
 
 .progress div:last-child {
-    background-color:  var(--color2);
+    background-color:  var(--bg);
     transition: all 0.4s;
 }
 

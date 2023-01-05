@@ -148,7 +148,7 @@ const { createApp } = Vue
         },
         demoDept: {
             code: "HR",
-            title: "Human Resources",
+            title: "Human Resources - Report",
             description: "Roll out and activate the Integrated case management system",
             budget: {
                 project: '2,300,000 AED',
@@ -189,7 +189,59 @@ const { createApp } = Vue
                     status: 'progress'
                 }
             ]
-        }
+        },
+        demoEMR: {
+            code: "E2K5",
+            title: "Emiratization",
+            description: "Measures the percentage of national employees within the government entity",
+            pTitle: 'Advanced and unified case management',
+            oTitle: 'Deploy ICM',
+            tags: [
+                { key: 'KPI type', value: 'Strategic', label: '(Strategic, Operational)' },
+                { key: 'Measurement unit', value: '%', label: '' },
+                { key: 'Targeted direction', value: 'Increase', label: '' },
+                { key: 'Frequency', value: 'Quarterly', label: '' },
+                { key: 'Data source', value: 'Report / Statistic', label: '' },
+                { key: 'KPI owner', value: 'Supporting Services Sector', label: '' },
+            ],
+            data: [
+                {
+                    year: 2022,
+                    quaters: [
+                        { key: 'Q1', value: 83 },
+                        { key: 'Q2', value: 85 },
+                        { key: 'Q3', value: 88 },
+                        { key: 'Q4', value: 90 }
+                    ],
+                    total: 0
+                },
+                {
+                    year: 2024,
+                    total: 90
+                },
+                {
+                    year: 2025,
+                    total: 90
+                }
+            ],
+            challeneges: [
+                {
+                    title: 'Complete the Procument Process',
+                    status: 'done'
+                },
+                {
+                    title: 'User Acceptance challenge',
+                    status: 'overdue'
+                },
+                {
+                    title: 'Complete the Procument Process',
+                    status: 'progress'
+                }
+            ],
+            analysis: 'The KPI measures the percentage completion of Integrated Case Management set-up. Identify extension systems including document and file management, advanced collaboration and correspondence management and financial tracking and accountability. License management and Continuing Professional Development (CPD) management.',
+            result1: 70,
+            result2: 30
+        },
       }
     },
     created () {

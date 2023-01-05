@@ -84,25 +84,25 @@
                     </div>
 
                     <div class="col-12">
-                        <h2 class="my-2 py-3">{{demoKPI.code}} - {{demoKPI.title}}</h2>
+                        <h2 class="my-2 py-3">{{demoEMR.code}} - {{demoEMR.title}}</h2>
                     </div>
 
                     <div class="col-12">
                         <h5>Description</h5>
-                        <p>{{demoKPI.description}}</p>
+                        <p>{{demoEMR.description}}</p>
                     </div>
 
                     <div class="col-12">
                         <div class="progress">
-                            <div v-bind:style="{ width: demoKPI.result1+'%' }" v-bind:data-value="demoKPI.result1+'%'"></div>
-                            <div v-bind:style="{ width: demoKPI.result2+'%' }" v-bind:data-value="demoKPI.result2+'%'"></div>
+                            <div v-bind:style="{ width: demoEMR.result1+'%' }" v-bind:data-value="demoEMR.result1+'%'"></div>
+                            <div v-bind:style="{ width: demoEMR.result2+'%' }" v-bind:data-value="demoEMR.result2+'%'"></div>
                         </div>
                     </div>
 
                 </div>
 
                 <div class="row gy-2">
-                    <div class="col-4" v-for="tag in demoKPI.tags">
+                    <div class="col-4" v-for="tag in demoEMR.tags">
                         <div class="bg-light border-start border-5 p-3 fs-5">
                             {{tag.key}}: <strong>{{tag.value}}</strong>
                         </div>
@@ -116,13 +116,13 @@
                 </div>
                 <!-- KPI data -->
                 <div class="row">
-                    <div class="col-2" v-for="q in demoKPI.data[0].quaters">
+                    <div class="col-2" v-for="q in demoEMR.data[0].quaters">
                         <div class="card rounded-0">
                             <div class="card-header">
                                 <div class="d-flex justify-content-between">
                                     <h4>{{q.key}}</h4>
                                     <div>
-                                        <small>target  </small>
+                                        <small>target </small>
                                         <strong class="fs-5">90%</strong>
                                     </div>
                                 </div>
@@ -132,7 +132,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-2" v-for="(q, qIndex) in demoKPI.data.slice(1)" :key="qIndex">
+                    <div class="col-2" v-for="(q, qIndex) in demoEMR.data.slice(1)" :key="qIndex">
                         <div class="card rounded-0">
                             <div class="card-header">
                                 <h4>{{q.year}}</h4>
@@ -178,7 +178,7 @@
                                 </div>
                             </div>
                             <div class="card-body mb-4">
-                                <div class="kpi-item" v-for="(dt, kIndex) in demoKPI.challeneges" :key="kIndex" :style="{ background: dt.bgColor }">
+                                <div class="kpi-item" v-for="(dt, kIndex) in demoEMR.challeneges" :key="kIndex" :style="{ background: dt.bgColor }">
                                     <div class="title">
                                         <h6 class="m-0 p-0 fw-normal">
                                             <a href="#" data-bs-toggle="tooltip" :data-bs-title="dt.description">{{dt.title}}</a>
@@ -207,7 +207,7 @@
                             </div>
                             <div class="card-body bg-light">
                                 <div class="form-control border-0 rounded-0 py-4"  contenteditable>
-                                    {{demoKPI.analysis}}<br /><br /><br /><br /><br />
+                                    {{demoEMR.analysis}}<br /><br /><br /><br /><br />
                                 </div>
                             </div>
                         </div>

@@ -31,7 +31,7 @@
                 </div>
                 <div class="main-menu">
                     <a href="demo-dashboard.html" title="Dashboard"><i class="las la-tachometer-alt"></i></a>
-                    <a href="#" title="Organization"><i class="las la-university"></i></a>
+                    <a href="demo-dept.html" title="Organization"><i class="las la-university"></i></a>
                     <a href="index.html" class="active" title="Objectives"><i class="las la-server"></i></a>
                     <a href="#" title="Reports"><i class="las la-chart-pie"></i></a>
                 </div>
@@ -143,18 +143,18 @@
                 <!-- enablers -->
                 <div class="py-4 px-2">
 
-                    <div class="accordion-header mb-2" v-for="enabler in db.enablers">
-                        <button type="button" class="tag btn btn-secondary rounded-0" @click="fnViewEnabler(enabler)">
-                            <h1>{{enabler.code}}</h1>
+                    <div class="accordion-header mb-2" v-for="enabler in db.enablers" @click="fnViewEnabler(enabler)">
+                        <button type="button" class="tag btn btn-secondary rounded-0">
+                            <h4>{{enabler.code}}</h4>
                         </button>
                         <div class="title">
-                            <h5 class="m-0 p-0 fw-normal text-truncate">{{enabler.title}}</h5>
+                            <h4 class="m-0 p-0 fw-normal text-truncate">{{enabler.title}}</h4>
                         </div>
-                        <div class="action gap-1">
-                            <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle"
-                                ><i class="las la-marker"></i></button>
-                            <button type="button" class="btn btn-outline-danger btn-sm rounded-circle"
-                                ><i class="lar la-trash-alt"></i></button>
+                        <div class="action gap-1" style="background-color: #91bab8;
+                        font-size: 24px;
+                        font-weight: bold;
+                        color: #fff; width: fit-content; ">
+                        50%
                         </div>
                     </div>
 
@@ -281,7 +281,7 @@
                                                             <div class="title">
                                                                 <button type="button" class="btn btn-outline-danger border-0 rounded-circle d-none" @click="fnRemoveKPI(kIndex,  objective.ini)"><i class="las la-times-circle"></i></button>
                                                                 <h6 class="m-0 p-0 fw-normal">
-                                                                    <a href="demo-ini.html" data-bs-toggle="tooltip" :data-bs-title="dt.description"><span class="fw-bolder">{{dt.code}} -</span> {{dt.title}}</a>
+                                                                    <a href="demo-ini.html" data-bs-toggle="tooltip" :data-bs-title="dt.description"><span class="fw-bolder">{{dt.code}} -</span> {{dt.description}}</a>
                                                                 </h6>
                                                             </div>
                                                             <div class="result expected" data-headline="expected" data-baseline="%">
@@ -407,7 +407,7 @@
                                                         <div class="kpi-item" v-for="(dt, kIndex) in enabler.ini" :key="kIndex" :style="{ background: dt.bgColor }">
                                                             <div class="title">
                                                                 <h6 class="m-0 p-0 fw-normal">
-                                                                    <a href="#" data-bs-toggle="tooltip" :data-bs-title="dt.description"><span class="fw-bolder">{{dt.code}} -</span> {{dt.title}}</a>
+                                                                    <a href="#" data-bs-toggle="tooltip" :data-bs-title="dt.description"><span class="fw-bolder">{{dt.code}} -</span> {{dt.description}}</a>
                                                                 </h6>
                                                             </div>
                                                             <div class="result expected" data-headline="expected" data-baseline="%">
